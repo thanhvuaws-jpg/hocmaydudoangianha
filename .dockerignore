@@ -7,3 +7,4 @@ reports/
 *.ipynb
 models/lightgbm_cuoi.txt
 models/ensemble.json
+goi/

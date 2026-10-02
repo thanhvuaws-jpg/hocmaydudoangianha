@@ -85,8 +85,10 @@ docker compose up --build
 ```
 Mở http://localhost:8000 (tài liệu API: http://localhost:8000/docs)
 
-## Lưu ý về mô hình trên git
-Hai tệp `models/xgb.json` (150 MB) và `models/lightgbm.txt` (373 MB) vượt giới hạn 100 MB/tệp của GitHub, nên cả ba tệp mô
-hình của ensemble (kèm `models/catboost.cbm`, 25 MB) đều không có trong repo. Chạy lại notebook 07 → 08 (khoảng 1,5 giờ) để tạo lại, hoặc chép ba tệp này
-vào thư mục `models/`. Các tệp nhỏ đi kèm (`bo_tien_xu_ly.joblib`, `thong_tin_mo_hinh.json`, `danh_muc.json`,
-`thi_truong.json`, `tong_quan_du_lieu.json`) đã có sẵn.
+## Mô hình và dữ liệu trên git
+GitHub không nhận tệp trên 100 MB, nên ba tệp mô hình của ensemble (`xgb.json`, `lightgbm.txt`, `catboost.cbm`, tổng 548 MB) và
+6 tệp dữ liệu thô (1,2 GB) được nén và cắt thành các phần dưới 95 MB trong thư mục `goi/` (mã kiểm tra SHA-256 trong
+`goi/SHA256.txt`):
+- `chay_docker.bat` tự ghép và giải nén mô hình vào `models/` ở lần chạy đầu tiên, nên chỉ cần cài Docker Desktop là chạy được.
+- `giai_nen_du_lieu.bat` giải nén dữ liệu thô vào `data/raw/` khi muốn chạy lại các notebook.
+- Dữ liệu trung gian (`data/interim`, `data/processed`) không đưa lên vì tạo lại được bằng notebook 02 → 05 (khoảng 10 phút).

@@ -3,6 +3,24 @@ chcp 65001 >nul
 title Định giá nhà đất - Docker
 cd /d "%~dp0"
 
+if exist "models\xgb.json" if exist "models\lightgbm.txt" if exist "models\catboost.cbm" goto co_mo_hinh
+if not exist "goi\mo_hinh.zip.001" (
+  echo Thiếu mô hình trong thư mục models và không tìm thấy goi\mo_hinh.zip.001. Hãy tải đầy đủ repo về.
+  pause
+  exit /b 1
+)
+echo Lần đầu chạy: đang ghép và giải nén mô hình (khoảng 550 MB, mất vài chục giây)...
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$ra=[IO.File]::Create('%TEMP%\mo_hinh.zip'); Get-ChildItem 'goi\mo_hinh.zip.*' | Sort-Object Name | ForEach-Object { $v=[IO.File]::OpenRead($_.FullName); $v.CopyTo($ra); $v.Close() }; $ra.Close()"
+tar -xf "%TEMP%\mo_hinh.zip" -C models
+if errorlevel 1 (
+  echo Giải nén mô hình thất bại.
+  pause
+  exit /b 1
+)
+del "%TEMP%\mo_hinh.zip"
+echo Đã giải nén mô hình vào thư mục models.
+:co_mo_hinh
+
 where docker >nul 2>&1
 if errorlevel 1 (
   echo Chưa cài Docker Desktop. Tải tại https://www.docker.com/products/docker-desktop/
