@@ -1,0 +1,14 @@
+﻿Sửa lỗi và khôi phục dữ liệu (không bỏ dòng),Số ô / số tin
+"Địa danh, tiêu đề khác mã Unicode / kiểu bỏ dấu -> chuẩn hoá",68314
+Toạ độ bị đảo / mất dấu thập phân -> sửa,468
+Giá trị số vô lý -> đánh dấu thiếu,11103
+Giá lệch 10/100/1000 lần -> sửa,16154
+Loại BĐS ghi sai -> sửa,9462
+Giá thiếu -> khôi phục từ tiêu đề/mô tả,22693
+Diện tích thiếu -> khôi phục từ tiêu đề,6763
+Quận/huyện thiếu -> khôi phục từ tiêu đề,33455
+Quận/huyện thiếu -> khôi phục bằng KNN toạ độ,44907
+Loại BĐS thiếu (nguồn 5) -> đoán bằng mô hình phân loại,30249
+so_tang của đất trống -> 0 (không áp dụng),370306
+so_phong_ngu của đất trống -> 0 (không áp dụng),371863
+so_phong_tam của đất trống -> 0 (không áp dụng),372297

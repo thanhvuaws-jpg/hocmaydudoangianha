@@ -1,0 +1,26 @@
+﻿Cột,Ý nghĩa,Kiểu,Đơn vị,Nguồn 1,Nguồn 2,Nguồn 3,Nguồn 4,Nguồn 5,Nguồn 6
+nguon,Mã nguồn dữ liệu (1–6),số nguyên,,1,2,3,4,5,6
+ma_tin,Mã tin đăng gốc (để phát hiện trùng),chuỗi,,—,Listing ID,—,id,—,—
+tieu_de,Tiêu đề tin đăng,chuỗi,,name,Title,—,title,—,Title
+loai_bds,Loại BĐS (5 nhóm sau gộp),phân loại,,property_type_name,Property Type,Loại hình nhà ở,suy ra từ title,— (đoán bằng mô hình),PostType
+vi_tri,Mặt phố hay trong ngõ/hẻm,phân loại,,—,Position,Loại hình nhà ở,frontage,—,PostType
+tinh,Tỉnh/thành theo địa giới mới (34 tỉnh),phân loại,,province_name,Location (cuối),Hà Nội,location (cuối),Address (cuối),Hà Nội
+tinh_cu,Tỉnh/thành theo địa giới cũ (63 tỉnh),phân loại,,province_name,"Location (nếu chưa ""(Mới)"")",Hà Nội,location,Address,Hà Nội
+quan_huyen,"Quận/huyện (đã bỏ tiền tố, ""7"" -> ""Quận 7"")",phân loại,,district_name,Location,Quận,location (đầu),Address,District
+phuong_xa,Phường/xã,phân loại,,ward_name,Location,Huyện (ghi nhầm tên cột),—,Address,Address
+duong,Tên đường/phố,chuỗi,,street_name,Location,Địa chỉ,—,Address,Address
+du_an,Tên dự án (nếu thuộc dự án),chuỗi,,project_name,—,—,—,Address,Address
+gia_vnd,GIÁ BÁN – biến mục tiêu,số thực,VNĐ,price (VNĐ),Price × 10⁶,Giá/m2 × Diện tích,price_million_vnd × 10⁶,Price × 10⁹,"Price (chuỗi ""15 tỷ"")"
+gia_trich_xuat,"Giá đọc được từ tiêu đề/mô tả (để khôi phục, kiểm tra)",số thực,VNĐ,"name, description","Title, Description",—,title,—,Title
+dien_tich_m2,Diện tích đất/sàn,số thực,m²,area,Area,"Diện tích (""46 m²"")",area_m2,Area,"Area (""63 m²"")"
+mat_tien_m,Chiều rộng mặt tiền,số thực,m,frontage_width,Width,Rộng,—,Frontage,Width_meters
+chieu_dai_m,Chiều dài lô đất,số thực,m,house_depth,Length,Dài,—,—,—
+duong_vao_m,Độ rộng đường vào/ngõ,số thực,m,road_width,Alley Width,—,—,Access Road,Entrancewidth
+so_tang,Số tầng,số thực,tầng,floor_count,Floors,Số tầng,floors,Floors,"Floors (""5 tầng"")"
+so_phong_ngu,Số phòng ngủ,số thực,phòng,bedroom_count,Bedrooms,"Số phòng ngủ (""5 phòng"")",bedrooms,Bedrooms,Bedrooms
+so_phong_tam,Số phòng tắm/WC,số thực,phòng,bathroom_count,Bathrooms,—,bathrooms,Bathrooms,Bathrooms
+huong_nha,Hướng nhà (8 hướng),phân loại,,house_direction,Direction,—,—,House direction,Direction
+phap_ly,Tình trạng pháp lý,phân loại,,—,—,Giấy tờ pháp lý,—,Legal status (tiếng Anh),Legal
+noi_that,Mức nội thất,phân loại,,—,—,—,—,Furniture state (tiếng Anh),Interior
+"vi_do, kinh_do",Toạ độ,số thực,độ,—,"Latitude, Longitude",—,—,—,—
+ngay_dang,Ngày đăng tin,ngày,,published_at,Last Updated Date,Ngày,29/12/2025 − timeline_hours,— (ước lượng 2024),PostingDate

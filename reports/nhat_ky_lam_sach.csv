@@ -1,0 +1,13 @@
+﻿Bước,Trước,Sau,Bỏ đi,Ghi chú
+1a. Bỏ tin cho thuê,1429399,1426102,3297,
+"1b. Bỏ kho xưởng, văn phòng, khách sạn, nhà trọ",1426102,1417722,8380,
+1c. Bỏ dòng không xác định được tỉnh,1417722,1417710,12,
+5a. Bỏ tin thiếu giá (biến mục tiêu),1417710,1358652,59058,không thể khôi phục từ văn bản
+5b. Bỏ tin thiếu diện tích,1358652,1349492,9160,
+5c. Bỏ tin vi phạm miền giá trị,1349492,1337360,12132,"giá 0,1–1.000 tỷ; diện tích theo loại"
+6a. Trùng hoàn toàn,1337360,1310773,26587,
+6b. Trùng mã tin trong cùng nguồn,1310773,1308124,2649,
+"6c. Đăng lại cùng tiêu đề, giá, diện tích, quận",1308124,1219708,88416,
+"6d. Trùng nội dung (cùng loại, quận, diện tích, giá, số phòng, số tầng)",1219708,886602,333106,gồm cả trùng chéo giữa các nguồn
+7. Bỏ ngoại lai giá/m² theo nhóm,886602,863524,23078,robust z > 3.5
+TỔNG,1429399,863524,565875,giữ lại 60.4%

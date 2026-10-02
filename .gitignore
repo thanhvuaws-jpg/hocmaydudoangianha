@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+catboost_info/
+data/
+models/xgb.json
+models/lightgbm.txt
+models/catboost.cbm
+models/lightgbm_cuoi.txt
+format tieuluan.docx
+~$*

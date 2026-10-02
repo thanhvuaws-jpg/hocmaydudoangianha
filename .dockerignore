@@ -1,0 +1,9 @@
+.venv/
+data/
+notebooks/
+reports/
+.vscode/
+**/__pycache__/
+*.ipynb
+models/lightgbm_cuoi.txt
+models/ensemble.json

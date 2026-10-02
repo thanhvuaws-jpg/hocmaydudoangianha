@@ -1,0 +1,365 @@
+{
+  "mo_hinh": "Ensemble: trọng số tối ưu (NNLS)",
+  "loai": "ensemble",
+  "tep": [
+    "xgb.json",
+    "lightgbm.txt",
+    "catboost.cbm"
+  ],
+  "trong_so": {
+    "xgb.json": 0.195471885979816,
+    "lightgbm.txt": 0.6625830359425441,
+    "catboost.cbm": 0.14194507807764004
+  },
+  "dac_trung": [
+    "log_dien_tich",
+    "mat_tien_m",
+    "chieu_dai_m",
+    "duong_vao_m",
+    "so_tang",
+    "so_phong_ngu",
+    "so_phong_tam",
+    "thang_tu_2019",
+    "thieu_mat_tien_m",
+    "thieu_chieu_dai_m",
+    "thieu_duong_vao_m",
+    "thieu_so_phong_ngu",
+    "thieu_so_phong_tam",
+    "thieu_quan",
+    "co_du_an",
+    "dia_gioi_moi",
+    "loai_doan",
+    "te_tinh",
+    "te_quan",
+    "te_phuong",
+    "te_duong",
+    "te_du_an",
+    "log_dem_quan",
+    "log_dem_du_an",
+    "loai_bds=Đất",
+    "loai_bds=Căn hộ",
+    "loai_bds=Biệt thự/Liền kề",
+    "loai_bds=Shophouse",
+    "vung=Hồ Chí Minh",
+    "vung=Đà Nẵng",
+    "vung=Tỉnh khác",
+    "huong_nha=Đông",
+    "huong_nha=Tây",
+    "huong_nha=Nam",
+    "huong_nha=Bắc",
+    "huong_nha=Đông Nam",
+    "huong_nha=Đông Bắc",
+    "huong_nha=Tây Nam",
+    "huong_nha=Tây Bắc",
+    "noi_that=Cơ bản",
+    "vi_tri=Mặt phố",
+    "vi_tri=Ngõ/Hẻm",
+    "nguon=4",
+    "nguon=6"
+  ],
+  "ket_qua_test": {
+    "RMSE log": 0.3758337084079379,
+    "R² log": 0.8807105924509918,
+    "MAE (tỷ)": 3.8660138402290465,
+    "MAPE (%)": 27.788712913140916,
+    "Trung vị APE (%)": 16.544983742972917,
+    "Lệch ≤10% (%)": 33.46509275915046,
+    "Lệch ≤20% (%)": 57.172525071605584
+  },
+  "khoang_sai_so": {
+    "Tất cả": [
+      0.6793342023771981,
+      1.473668428570132
+    ],
+    "Biệt thự/Liền kề": [
+      0.7697373156063049,
+      1.3113119665137785
+    ],
+    "Căn hộ": [
+      0.8096912352985254,
+      1.2312086981052164
+    ],
+    "Nhà ở": [
+      0.6943602196217663,
+      1.4545310853683409
+    ],
+    "Shophouse": [
+      0.7260747482919778,
+      1.391844326729897
+    ],
+    "Đất": [
+      0.5570389010361897,
+      1.7522112407402683
+    ]
+  },
+  "so_mau_train": 604466,
+  "so_mau_val": 129529,
+  "so_mau_test": 129529,
+  "so_sanh": [
+    {
+      "mo_hinh": "Ensemble: trọng số tối ưu (NNLS)",
+      "nhom": "Kết hợp",
+      "rmse": 0.3758337077849168,
+      "r2": 0.8807105928464848,
+      "mape": 27.78871288399154,
+      "lech20": 57.172525071605584,
+      "thoi_gian": 839.0
+    },
+    {
+      "mo_hinh": "LightGBM (3684 cây, đã dò tham số)",
+      "nhom": "Boosting",
+      "rmse": 0.3770095834248427,
+      "r2": 0.8799629806097521,
+      "mape": 27.804652017372028,
+      "lech20": 57.18178940623335,
+      "thoi_gian": 310.5
+    },
+    {
+      "mo_hinh": "Ensemble: trung bình 3 boosting",
+      "nhom": "Kết hợp",
+      "rmse": 0.3771685956814264,
+      "r2": 0.8798617026400297,
+      "mape": 28.024391826938388,
+      "lech20": 56.62515730068171,
+      "thoi_gian": 839.0
+    },
+    {
+      "mo_hinh": "XGBoost (3867 cây)",
+      "nhom": "Boosting",
+      "rmse": 0.383524537821464,
+      "r2": 0.8757785101468267,
+      "mape": 28.70005304755131,
+      "lech20": 55.95735317959685,
+      "thoi_gian": 188.0
+    },
+    {
+      "mo_hinh": "HistGradientBoosting (1770 vòng)",
+      "nhom": "Boosting",
+      "rmse": 0.3848276316607366,
+      "r2": 0.8749329462402221,
+      "mape": 28.637861545669107,
+      "lech20": 55.714936423503616,
+      "thoi_gian": 125.9
+    },
+    {
+      "mo_hinh": "CatBoost (6000 cây)",
+      "nhom": "Boosting",
+      "rmse": 0.3863884430503335,
+      "r2": 0.8739163770998459,
+      "mape": 29.05367028181865,
+      "lech20": 54.72828478564645,
+      "thoi_gian": 340.5
+    },
+    {
+      "mo_hinh": "Random Forest (100 cây)",
+      "nhom": "Bagging",
+      "rmse": 0.4066497927507255,
+      "r2": 0.8603465934816322,
+      "mape": 30.612687172710253,
+      "lech20": 53.17959684703811,
+      "thoi_gian": 23.9
+    },
+    {
+      "mo_hinh": "Extra Trees (100 cây)",
+      "nhom": "Bagging",
+      "rmse": 0.4162455921960854,
+      "r2": 0.853677969769109,
+      "mape": 31.574381367631364,
+      "lech20": 50.91601108632043,
+      "thoi_gian": 23.2
+    },
+    {
+      "mo_hinh": "MLP 256-128-64 (44 vòng)",
+      "nhom": "Mạng nơ-ron",
+      "rmse": 0.433971893677173,
+      "r2": 0.8409500160620561,
+      "mape": 35.02654389593665,
+      "lech20": 47.2751275776081,
+      "thoi_gian": 272.3
+    },
+    {
+      "mo_hinh": "Decision Tree (độ sâu 16)",
+      "nhom": "Cây đơn",
+      "rmse": 0.4464350223735152,
+      "r2": 0.8316834047203666,
+      "mape": 34.75512192240507,
+      "lech20": 48.407692485852586,
+      "thoi_gian": 7.7
+    },
+    {
+      "mo_hinh": "Kernel Ridge RBF (tự code, 7,999 mẫu con)",
+      "nhom": "Tự code (NumPy)",
+      "rmse": 0.458891338860843,
+      "r2": 0.8221597153093729,
+      "mape": 37.19880496001019,
+      "lech20": 44.59155864709833,
+      "thoi_gian": 8.817720651626587
+    },
+    {
+      "mo_hinh": "Linear Regression (tự code, nghiệm đóng)",
+      "nhom": "Tự code (NumPy)",
+      "rmse": 0.4931299989532777,
+      "r2": 0.7946317656075309,
+      "mape": 41.0941423532494,
+      "lech20": 40.61329895235816,
+      "thoi_gian": 0.125495433807373
+    },
+    {
+      "mo_hinh": "Linear Regression",
+      "nhom": "Tuyến tính",
+      "rmse": 0.4931299989532777,
+      "r2": 0.7946317656075308,
+      "mape": 41.09414235324763,
+      "lech20": 40.61329895235816,
+      "thoi_gian": 1.1
+    },
+    {
+      "mo_hinh": "Ridge (tự code, λ=0.01)",
+      "nhom": "Tự code (NumPy)",
+      "rmse": 0.4931299990452338,
+      "r2": 0.7946317655309391,
+      "mape": 41.09414190926978,
+      "lech20": 40.61329895235816,
+      "thoi_gian": 0.1452424526214599
+    },
+    {
+      "mo_hinh": "Ridge (α chọn bằng CV)",
+      "nhom": "Tuyến tính",
+      "rmse": 0.4931300080905063,
+      "r2": 0.7946317579969757,
+      "mape": 41.094099903311616,
+      "lech20": 40.61329895235816,
+      "thoi_gian": 3.1
+    },
+    {
+      "mo_hinh": "Lasso (α = 0,0005)",
+      "nhom": "Tuyến tính",
+      "rmse": 0.4932316599170636,
+      "r2": 0.7945470817119112,
+      "mape": 41.07502594984949,
+      "lech20": 40.57083741864756,
+      "thoi_gian": 16.6
+    },
+    {
+      "mo_hinh": "Linear Regression (tự code, GD, η=0.1153)",
+      "nhom": "Tự code (NumPy)",
+      "rmse": 0.493257439147638,
+      "r2": 0.7945256047590132,
+      "mape": 41.0872349578676,
+      "lech20": 40.56234511190544,
+      "thoi_gian": 19.08358144760132
+    },
+    {
+      "mo_hinh": "ElasticNet (α = 0,001, l1 = 0,5)",
+      "nhom": "Tuyến tính",
+      "rmse": 0.4932863432412823,
+      "r2": 0.794501523114421,
+      "mape": 41.06794591605529,
+      "lech20": 40.61870314755769,
+      "thoi_gian": 17.4
+    },
+    {
+      "mo_hinh": "KNN (k = 10, 200.000 mẫu)",
+      "nhom": "Lân cận",
+      "rmse": 0.4968489165372624,
+      "r2": 0.7915225350863327,
+      "mape": 37.40612132083147,
+      "lech20": 44.170031421534944,
+      "thoi_gian": 0.1
+    }
+  ],
+  "mat_can_bang": [
+    {
+      "cach": "Không xử lý",
+      "rmse": 0.3787502554732914,
+      "mape_macro_loai": 25.076738140385405,
+      "mape_macro_phan_khuc": 36.01457298415154
+    },
+    {
+      "cach": "Trọng số tầng (căn bậc hai)",
+      "rmse": 0.38154030563243335,
+      "mape_macro_loai": 25.347649240244635,
+      "mape_macro_phan_khuc": 36.61875646005516
+    },
+    {
+      "cach": "Trọng số tầng (đầy đủ)",
+      "rmse": 0.38808377846983055,
+      "mape_macro_loai": 25.920202790276797,
+      "mape_macro_phan_khuc": 37.28960119804136
+    },
+    {
+      "cach": "Trọng số theo phân khúc giá",
+      "rmse": 0.3832964062586726,
+      "mape_macro_loai": 25.3343059376604,
+      "mape_macro_phan_khuc": 34.57722139659759
+    },
+    {
+      "cach": "Tăng mẫu nhóm hiếm",
+      "rmse": 0.37654769636861785,
+      "mape_macro_loai": 24.939827297068526,
+      "mape_macro_phan_khuc": 36.029153880032915
+    }
+  ],
+  "quan_trong": [
+    {
+      "dac_trung": "log_dien_tich",
+      "gia_tri": 0.6456114772877507
+    },
+    {
+      "dac_trung": "te_phuong",
+      "gia_tri": 0.4083921236410699
+    },
+    {
+      "dac_trung": "te_du_an",
+      "gia_tri": 0.26017193164808905
+    },
+    {
+      "dac_trung": "te_duong",
+      "gia_tri": 0.1615759083641618
+    },
+    {
+      "dac_trung": "thang_tu_2019",
+      "gia_tri": 0.06906887209533269
+    },
+    {
+      "dac_trung": "so_tang",
+      "gia_tri": 0.06048128532886066
+    },
+    {
+      "dac_trung": "loai_bds=Căn hộ",
+      "gia_tri": 0.03576826466766159
+    },
+    {
+      "dac_trung": "so_phong_tam",
+      "gia_tri": 0.03015937659650214
+    },
+    {
+      "dac_trung": "mat_tien_m",
+      "gia_tri": 0.028957931387772362
+    },
+    {
+      "dac_trung": "duong_vao_m",
+      "gia_tri": 0.02712301683762708
+    },
+    {
+      "dac_trung": "te_quan",
+      "gia_tri": 0.022917951802500447
+    },
+    {
+      "dac_trung": "so_phong_ngu",
+      "gia_tri": 0.022051594266612018
+    },
+    {
+      "dac_trung": "log_dem_quan",
+      "gia_tri": 0.022008456820969857
+    },
+    {
+      "dac_trung": "te_tinh",
+      "gia_tri": 0.013362871934184006
+    },
+    {
+      "dac_trung": "chieu_dai_m",
+      "gia_tri": 0.012550653866757522
+    }
+  ]
+}

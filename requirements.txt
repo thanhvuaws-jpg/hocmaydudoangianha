@@ -1,0 +1,12 @@
+pandas==2.2.3
+numpy==2.2.6
+pyarrow==21.0.0
+scikit-learn==1.6.1
+xgboost==3.0.5
+lightgbm==4.6.0
+catboost==1.2.8
+matplotlib==3.10.6
+seaborn==0.13.2
+joblib==1.5.2
+fastapi==0.118.0
+uvicorn==0.37.0

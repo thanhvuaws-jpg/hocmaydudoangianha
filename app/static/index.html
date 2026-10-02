@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Định giá nhà đất Việt Nam</title>
+  <meta name="description" content="Ước tính giá nhà đất từ 863.838 tin đăng đã làm sạch">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='6' width='28' height='20' rx='4' fill='%231D4E9E'/%3E%3Crect x='4.5' y='8.5' width='23' height='15' rx='2.5' fill='none' stroke='white' stroke-width='1.5'/%3E%3Cpath d='M10 20v-5l6-4 6 4v5z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/style.css?v=7">
+</head>
+<body>
+<header class="dau-trang">
+  <a class="thuong-hieu" href="/" aria-label="Trang định giá">
+    <span class="bien-nho" aria-hidden="true">Giá nhà</span>
+    <span class="ten-du-an">Định giá nhà đất Việt Nam</span>
+  </a>
+  <nav class="dieu-huong" role="tablist" aria-label="Các trang">
+    <button role="tab" aria-selected="true" aria-controls="trang-dinh-gia" id="tab-dinh-gia">Định giá</button>
+    <button role="tab" aria-selected="false" aria-controls="trang-thi-truong" id="tab-thi-truong">Thị trường</button>
+    <button role="tab" aria-selected="false" aria-controls="trang-du-lieu" id="tab-du-lieu">Dữ liệu &amp; mô hình</button>
+  </nav>
+</header>
+
+<main>
+  <section id="trang-dinh-gia" role="tabpanel" aria-labelledby="tab-dinh-gia" class="trang dinh-gia">
+    <form id="form-dinh-gia" class="bieu-mau" novalidate>
+      <h1 class="tieu-de-trang">Căn nhà của bạn đáng giá bao nhiêu?</h1>
+      <p class="mo-ta-trang" id="mo-ta-mo-hinh">Nhập đặc điểm căn nhà, mô hình học từ hơn 600.000 tin đăng đã làm sạch sẽ ước tính giá bán.</p>
+
+      <fieldset class="nhom">
+        <legend>Loại bất động sản</legend>
+        <div class="chon-loai" id="chon-loai"></div>
+      </fieldset>
+
+      <fieldset class="nhom">
+        <legend>Vị trí</legend>
+        <div class="luoi-2">
+          <label>Tỉnh / thành phố<select id="tinh" required></select></label>
+          <label>Quận / huyện<select id="quan"></select></label>
+          <label>Phường / xã<select id="phuong"></select></label>
+          <label>Tên đường<input id="duong" type="text" placeholder="Ví dụ: Trần Duy Hưng" autocomplete="off"></label>
+          <label class="ca-dong" id="o-du-an">Thuộc dự án<select id="du-an"></select></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="nhom">
+        <legend>Diện tích và kích thước</legend>
+        <div class="dien-tich">
+          <label for="dien-tich">Diện tích</label>
+          <div class="o-so-lon"><input id="dien-tich" type="number" min="10" max="10000" step="0.5" value="60" required><span>m²</span></div>
+          <input id="thanh-dien-tich" type="range" min="10" max="500" step="1" value="60" aria-label="Kéo để chọn diện tích">
+        </div>
+        <div class="luoi-3">
+          <label>Mặt tiền (m)<input id="mat-tien" type="number" min="1" max="100" step="0.1" placeholder="Không rõ"></label>
+          <label>Chiều dài (m)<input id="chieu-dai" type="number" min="1" max="300" step="0.1" placeholder="Không rõ"></label>
+          <label>Đường / ngõ rộng (m)<input id="duong-vao" type="number" min="0.5" max="100" step="0.5" placeholder="Không rõ"></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="nhom" id="nhom-ket-cau">
+        <legend>Kết cấu</legend>
+        <div class="luoi-3">
+          <div class="buoc" data-id="so-tang"><span class="nhan">Số tầng</span><div><button type="button" data-d="-1" aria-label="Giảm số tầng">−</button><output id="so-tang">4</output><button type="button" data-d="1" aria-label="Tăng số tầng">+</button></div></div>
+          <div class="buoc" data-id="phong-ngu"><span class="nhan">Phòng ngủ</span><div><button type="button" data-d="-1" aria-label="Giảm phòng ngủ">−</button><output id="phong-ngu">3</output><button type="button" data-d="1" aria-label="Tăng phòng ngủ">+</button></div></div>
+          <div class="buoc" data-id="phong-tam"><span class="nhan">Phòng tắm</span><div><button type="button" data-d="-1" aria-label="Giảm phòng tắm">−</button><output id="phong-tam">3</output><button type="button" data-d="1" aria-label="Tăng phòng tắm">+</button></div></div>
+        </div>
+      </fieldset>
+
+      <fieldset class="nhom">
+        <legend>Thông tin thêm</legend>
+        <div class="hang-chip" data-truong="vi_tri" aria-label="Vị trí"><span class="nhan">Vị trí</span></div>
+        <div class="hang-chip" data-truong="phap_ly" aria-label="Pháp lý"><span class="nhan">Pháp lý</span></div>
+        <div class="hang-chip" data-truong="noi_that" aria-label="Nội thất"><span class="nhan">Nội thất</span></div>
+        <div class="hang-chip" data-truong="huong_nha" aria-label="Hướng nhà"><span class="nhan">Hướng</span></div>
+      </fieldset>
+
+      <button class="nut-chinh" type="submit" id="nut-dinh-gia">Định giá căn này</button>
+      <p class="loi" id="loi" role="alert" hidden></p>
+    </form>
+
+    <aside class="ket-qua" aria-live="polite">
+      <div class="khung-nha">
+        <svg id="mat-nha" viewBox="0 0 340 290" role="img" aria-label="Hình minh hoạ căn nhà"></svg>
+        <p class="chu-thich" id="chu-thich-nha"></p>
+      </div>
+      <div class="bien-gia" id="bien-gia">
+        <span class="bien-nhan">Giá ước tính</span>
+        <span class="bien-so"><span id="gia-so">—</span> <small>tỷ đồng</small></span>
+      </div>
+      <div class="chi-tiet" id="chi-tiet" hidden>
+        <div class="dong-chi-tiet"><span>Đơn giá</span><strong id="don-gia"></strong></div>
+        <div class="khoang">
+          <div class="dong-chi-tiet"><span>Khoảng giá thường gặp</span><strong id="khoang-gia"></strong></div>
+          <div class="thanh-khoang" aria-hidden="true"><span class="vung"></span><span class="moc" id="moc-gia"></span></div>
+          <p class="ghi-chu">8 trên 10 căn tương tự trong tập kiểm tra có giá thật nằm trong khoảng này.</p>
+        </div>
+        <div class="so-sanh" id="so-sanh"></div>
+      </div>
+      <div class="lich-su" id="lich-su" hidden>
+        <h2>Lần định giá gần đây</h2>
+        <ol id="ds-lich-su"></ol>
+      </div>
+    </aside>
+  </section>
+
+  <section id="trang-thi-truong" role="tabpanel" aria-labelledby="tab-thi-truong" class="trang thi-truong" hidden>
+    <h1 class="tieu-de-trang">Giá đất nơi bạn quan tâm</h1>
+    <p class="mo-ta-trang">Trung vị giá/m² theo quận, tính từ dữ liệu đã làm sạch. Chỉ hiện quận có từ 20 tin trở lên.</p>
+    <div class="bo-loc">
+      <label>Tỉnh / thành phố<select id="tt-tinh"></select></label>
+      <div class="chon-loai nho" id="tt-loai" role="radiogroup" aria-label="Loại bất động sản"></div>
+    </div>
+    <p class="tom-tat" id="tt-tom-tat"></p>
+    <ol class="bang-quan" id="tt-quan"></ol>
+  </section>
+
+  <section id="trang-du-lieu" role="tabpanel" aria-labelledby="tab-du-lieu" class="trang du-lieu" hidden>
+    <h1 class="tieu-de-trang" id="dl-tieu-de">Từ 1,43 triệu tin thô đến dữ liệu sạch</h1>
+    <p class="mo-ta-trang">Sáu bộ tin đăng trên Kaggle được ghép, chuẩn hoá, sửa lỗi và lọc trùng trước khi huấn luyện mô hình.</p>
+
+    <h2>Sáu nguồn dữ liệu</h2>
+    <div class="cuon"><table class="bang" id="dl-nguon"></table></div>
+
+    <h2>Số tin còn lại sau từng bước làm sạch</h2>
+    <ol class="pheu" id="dl-pheu"></ol>
+
+    <div class="hai-cot">
+      <div>
+        <h2>Lỗi được sửa thay vì xoá</h2>
+        <ul class="ds-sua" id="dl-sua"></ul>
+      </div>
+      <div>
+        <h2>Chất lượng dữ liệu trước và sau</h2>
+        <div class="cuon"><table class="bang" id="dl-chat-luong"></table></div>
+      </div>
+    </div>
+
+    <h2>Dữ liệu mất cân bằng</h2>
+    <div class="hai-cot">
+      <div><h3>Theo loại bất động sản</h3><ol class="cot-ngang" id="dl-loai"></ol></div>
+      <div><h3>Theo vùng</h3><ol class="cot-ngang" id="dl-vung"></ol></div>
+    </div>
+    <h3>Năm cách xử lý khi huấn luyện</h3>
+    <div class="cuon"><table class="bang" id="dl-can-bang"></table></div>
+
+    <h2>So sánh các mô hình</h2>
+    <p class="mo-ta-trang" id="dl-mo-hinh-cuoi"></p>
+    <ol class="cot-ngang mo-hinh" id="dl-so-sanh"></ol>
+    <p class="chu-giai" id="dl-chu-giai"></p>
+
+    <h2>Đặc trưng ảnh hưởng nhiều nhất</h2>
+    <ol class="cot-ngang" id="dl-quan-trong"></ol>
+  </section>
+</main>
+
+<footer class="chan-trang">
+  <p>Tiểu luận học phần Máy học – nhóm Đàm Thanh Vũ, Hoàng Thủy Tiên, Trương Ngọc Tiến, Đỗ Trần Quang Anh, Trần Trung Trực.</p>
+  <p>Giá ước tính chỉ mang tính tham khảo, không thay thế thẩm định giá chuyên nghiệp.</p>
+</footer>
+<script src="/static/app.js?v=7"></script>
+</body>
+</html>
